@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Silas News — useful Nigerian, world, education, technology, sports and entertainment updates.">
+<title>Silas News — News & Updates</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="topbar"><span id="today">Loading date...</span><span>Stay informed. Stay ahead.</span></div>
+<nav><a class="logo" href="#top" aria-label="Silas News home"><span>SN</span> Silas News</a><button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+<div id="navlinks"><a href="#latest">Latest</a><a href="#nigeria">Nigeria</a><a href="#world">World</a><a href="#tech">Technology</a><a href="#education">Education</a><a href="#sports">Sports</a><a href="#entertainment">Entertainment</a></div>
+<button class="searchBtn" aria-label="Open search" onclick="openSearch()">⌕</button><button class="theme" aria-label="Toggle dark mode" onclick="toggleTheme()">◐</button></nav></header>
+
+<div id="searchPanel" class="search-panel" aria-hidden="true"><div class="search-inner"><input id="searchInput" type="search" placeholder="Search stories..." oninput="searchStories()"><button onclick="closeSearch()">Close</button></div><div id="searchResults" class="search-results"></div></div>
+
+<main id="top"><section class="hero"><div><span class="breaking">● NEWS & UPDATES</span><h1>News that matters,<br><em>updates you can use.</em></h1><p>Silas News brings important Nigerian, world, education, technology, sports and entertainment updates together in one simple place.</p><a class="btn" href="#latest">Read latest stories →</a></div>
+<div class="hero-card"><span class="tag">FEATURED</span><h2 id="featuredTitle">Welcome to Silas News</h2><p id="featuredText">A clean, fast and readable home for stories you can actually use.</p><button class="card-link" onclick="openFeatured()">Read featured story →</button><small id="featuredDate"></small></div></section>
+<section class="ticker"><strong>UPDATE</strong><div id="tickerText">Welcome to Silas News — fresh stories are shown below.</div></section>
+
+<section id="latest" class="section"><div class="section-head"><div><span class="eyebrow">TOP STORIES</span><h2>Latest News</h2></div><button onclick="refreshNews()">↻ Refresh</button></div><div class="filters" id="filters"></div><div id="newsGrid" class="grid"></div></section>
+
+<section id="nigeria" class="section category"><div class="section-head"><div><span class="eyebrow">NIGERIA</span><h2>What’s happening in Nigeria</h2></div></div><div id="nigeriaGrid" class="grid compact"></div></section>
+<section id="world" class="section"><div class="section-head"><div><span class="eyebrow">WORLD</span><h2>World Desk</h2></div></div><div id="worldGrid" class="grid compact"></div></section>
+<section id="tech" class="section"><div class="section-head"><div><span class="eyebrow">TECH & AI</span><h2>Technology</h2></div></div><div id="techGrid" class="grid compact"></div></section>
+<section id="education" class="section dark"><div class="section-head"><div><span class="eyebrow">EDUCATION</span><h2>Education Updates</h2></div></div><div id="educationGrid"></div></section>
+<section id="sports" class="section"><div class="section-head"><div><span class="eyebrow">SPORTS</span><h2>Sports Desk</h2></div></div><div id="sportsGrid" class="grid compact"></div></section>
+<section id="entertainment" class="section"><div class="section-head"><div><span class="eyebrow">ENTERTAINMENT</span><h2>Entertainment & Culture</h2></div></div><div id="entertainmentGrid" class="grid compact"></div></section>
+
+<section class="ai-box"><div><span class="eyebrow">SILAS AI</span><h2>Ask about the stories.</h2><p>This version works without an API. Silas AI searches the stories stored in this website and gives quick answers from them.</p><div class="suggestions"><button onclick="useSuggestion('What is the latest education story?')">Education</button><button onclick="useSuggestion('What technology stories are here?')">Technology</button><button onclick="useSuggestion('What sports stories are here?')">Sports</button></div><div class="chat"><input id="question" placeholder="Ask about a story..." onkeydown="if(event.key==='Enter')askAI()"><button onclick="askAI()">Ask</button></div><div id="answer" class="answer">Silas AI is ready.</div></div></section>
+</main>
+
+<div id="articleModal" class="modal" aria-hidden="true"><div class="modal-card"><button class="close" onclick="closeArticle()">×</button><span id="modalTag" class="tag"></span><h2 id="modalTitle"></h2><p id="modalMeta" class="meta"></p><div id="modalBody"></div></div></div>
+<footer><div class="logo"><span>SN</span> Silas News</div><p>Independent prototype • Built for fast, useful updates.</p><small>© <span id="year"></span> Silas News</small></footer>
+<script src="script.js"></script></body></html>
